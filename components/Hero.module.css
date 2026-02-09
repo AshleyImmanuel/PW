@@ -1,0 +1,77 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0 1rem;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 18vw, 15rem);
+    line-height: 0.8;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--c-text);
+    text-align: center;
+    margin: 0;
+    letter-spacing: -0.04em;
+    z-index: 2;
+}
+
+.subtitle {
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #666;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    z-index: 2;
+}
+
+.ctaButton {
+    appearance: none;
+    background: var(--c-text);
+    color: #fff;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.ctaButton:hover {
+    background: var(--c-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.blob1 {
+    width: 50vw;
+    height: 50vw;
+    background: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
