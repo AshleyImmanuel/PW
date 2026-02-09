@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TiltedCard from '@/components/TiltedCard';
+import PixelRevealCard from '@/components/PixelRevealCard';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -89,12 +90,11 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="lg:col-span-5 relative h-[400px] lg:h-[600px] flex items-center justify-center animate-float-slow">
-            <div className="absolute inset-0 bg-contain bg-center bg-no-repeat z-10 opacity-90 grayscale-[0.8] sepia-[0.2]"
-              style={{
-                backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMg3Pnytp2_ZJHkRj17YzQcE5mZO9OMF_KEiCZND-4WXT-LtbSDCsevT8tQ3WWo4yLu0p27oApZX5SlwQp_HmRVkn2elQ3b0NcO8UXohHkhs63Cn8eftdU7fyLiA7UDrc2LAwypE1EwEBYzYq15e5Z4ZDBOFIulnrrvD_fabJhneMqQl8oRdyQUIsydA1BfE7MVB5YaX5VQc3LMt0Btx7NuZ6SrOSQ_x4h2OAwEMkkHkiezLRlRc8pOQTwLfBX23Txpqqsc5BiJaU')",
-                filter: "contrast(1.1) brightness(1.1) hue-rotate(90deg)"
-              }}>
-            </div>
+            <PixelRevealCard
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMg3Pnytp2_ZJHkRj17YzQcE5mZO9OMF_KEiCZND-4WXT-LtbSDCsevT8tQ3WWo4yLu0p27oApZX5SlwQp_HmRVkn2elQ3b0NcO8UXohHkhs63Cn8eftdU7fyLiA7UDrc2LAwypE1EwEBYzYq15e5Z4ZDBOFIulnrrvD_fabJhneMqQl8oRdyQUIsydA1BfE7MVB5YaX5VQc3LMt0Btx7NuZ6SrOSQ_x4h2OAwEMkkHkiezLRlRc8pOQTwLfBX23Txpqqsc5BiJaU"
+              className="w-full h-full rounded-[2rem] z-10 opacity-90 sepia-[0.2] shadow-2xl"
+              pixelSize={40}
+            />
             <div className="absolute top-12 right-12 w-4/5 h-4/5 border-2 border-primary/10 rounded-[2rem] -z-10 bg-stone-50"></div>
           </div>
         </section>
