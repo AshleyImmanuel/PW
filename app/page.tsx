@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TiltedCard from '@/components/TiltedCard';
+import IntroAnimation from '@/components/IntroAnimation';
 import PixelRevealCard from '@/components/PixelRevealCard';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -48,6 +49,8 @@ const LandingPage = () => {
 
   return (
     <div className="bg-background-light text-text-main font-display min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary selection:text-white">
+
+      <IntroAnimation />
 
       {/* --- BACKGROUND ELEMENTS --- */}
       <div className="fixed inset-0 pointer-events-none z-0">
