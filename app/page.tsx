@@ -120,57 +120,63 @@ const LandingPage = () => {
         {/* --- SERVICES --- */}
         <section className="w-full bg-white relative z-20 border-b border-stone-200">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-[1600px] mx-auto" ref={serviceRef}>
-            <div className="group relative flex flex-col justify-between p-10 md:p-14 border-b md:border-b-0 md:border-r border-stone-200 hover:bg-white hover:z-10 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1">
-              <div className="flex flex-col gap-8">
-                <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <span className="material-symbols-outlined text-2xl">design_services</span>
+            <PixelRevealCard className="h-full rounded-[1rem]" pixelSize={60}>
+              <div className="group relative flex flex-col justify-between p-10 md:p-14 border-b md:border-b-0 md:border-r border-stone-200 hover:bg-white hover:z-10 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1 h-full bg-white">
+                <div className="flex flex-col gap-8">
+                  <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span className="material-symbols-outlined text-2xl">design_services</span>
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-text-main">UI/UX Design</h3>
+                  <p className="text-text-muted font-normal leading-relaxed text-base">
+                    We craft intuitive interfaces that not only look stunning but feel seamless. User-centric design woven with modern aesthetics.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-semibold tracking-tight text-text-main">UI/UX Design</h3>
-                <p className="text-text-muted font-normal leading-relaxed text-base">
-                  We craft intuitive interfaces that not only look stunning but feel seamless. User-centric design woven with modern aesthetics.
-                </p>
-              </div>
-              <div className="mt-12 pt-8 border-t border-stone-100 flex items-center justify-between">
-                <span className="font-medium text-xs uppercase tracking-widest text-stone-400">01</span>
-                <button className="w-8 h-8 flex items-center justify-center text-stone-400 group-hover:text-primary transition-all">
-                  <span className="material-symbols-outlined text-xl">arrow_outward</span>
-                </button>
-              </div>
-            </div>
-            <div className="group relative flex flex-col justify-between p-10 md:p-14 border-b md:border-b-0 md:border-r border-stone-200 hover:bg-white hover:z-10 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1">
-              <div className="flex flex-col gap-8">
-                <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <span className="material-symbols-outlined text-2xl">code_blocks</span>
+                <div className="mt-12 pt-8 border-t border-stone-100 flex items-center justify-between">
+                  <span className="font-medium text-xs uppercase tracking-widest text-stone-400">01</span>
+                  <button className="w-8 h-8 flex items-center justify-center text-stone-400 group-hover:text-primary transition-all">
+                    <span className="material-symbols-outlined text-xl">arrow_outward</span>
+                  </button>
                 </div>
-                <h3 className="text-2xl font-semibold tracking-tight text-text-main">Development</h3>
-                <p className="text-text-muted font-normal leading-relaxed text-base">
-                  Robust full-stack solutions. From React to Python, we build scalable architectures that power the next generation of web apps.
-                </p>
               </div>
-              <div className="mt-12 pt-8 border-t border-stone-100 flex items-center justify-between">
-                <span className="font-medium text-xs uppercase tracking-widest text-stone-400">02</span>
-                <button className="w-8 h-8 flex items-center justify-center text-stone-400 group-hover:text-primary transition-all">
-                  <span className="material-symbols-outlined text-xl">arrow_outward</span>
-                </button>
-              </div>
-            </div>
-            <div className="group relative flex flex-col justify-between p-10 md:p-14 hover:bg-white hover:z-10 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1">
-              <div className="flex flex-col gap-8">
-                <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <span className="material-symbols-outlined text-2xl">rocket_launch</span>
+            </PixelRevealCard>
+            <PixelRevealCard className="h-full rounded-[1rem]" pixelSize={60}>
+              <div className="group relative flex flex-col justify-between p-10 md:p-14 border-b md:border-b-0 md:border-r border-stone-200 hover:bg-white hover:z-10 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1 h-full bg-white">
+                <div className="flex flex-col gap-8">
+                  <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span className="material-symbols-outlined text-2xl">code_blocks</span>
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-text-main">Development</h3>
+                  <p className="text-text-muted font-normal leading-relaxed text-base">
+                    Robust full-stack solutions. From React to Python, we build scalable architectures that power the next generation of web apps.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-semibold tracking-tight text-text-main">Growth Strategy</h3>
-                <p className="text-text-muted font-normal leading-relaxed text-base">
-                  Data-driven marketing and brand positioning. We help you find your voice and amplify it across the digital landscape.
-                </p>
+                <div className="mt-12 pt-8 border-t border-stone-100 flex items-center justify-between">
+                  <span className="font-medium text-xs uppercase tracking-widest text-stone-400">02</span>
+                  <button className="w-8 h-8 flex items-center justify-center text-stone-400 group-hover:text-primary transition-all">
+                    <span className="material-symbols-outlined text-xl">arrow_outward</span>
+                  </button>
+                </div>
               </div>
-              <div className="mt-12 pt-8 border-t border-stone-100 flex items-center justify-between">
-                <span className="font-medium text-xs uppercase tracking-widest text-stone-400">03</span>
-                <button className="w-8 h-8 flex items-center justify-center text-stone-400 group-hover:text-primary transition-all">
-                  <span className="material-symbols-outlined text-xl">arrow_outward</span>
-                </button>
+            </PixelRevealCard>
+            <PixelRevealCard className="h-full rounded-[1rem]" pixelSize={60}>
+              <div className="group relative flex flex-col justify-between p-10 md:p-14 hover:bg-white hover:z-10 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1 h-full bg-white">
+                <div className="flex flex-col gap-8">
+                  <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <span className="material-symbols-outlined text-2xl">rocket_launch</span>
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-text-main">Growth Strategy</h3>
+                  <p className="text-text-muted font-normal leading-relaxed text-base">
+                    Data-driven marketing and brand positioning. We help you find your voice and amplify it across the digital landscape.
+                  </p>
+                </div>
+                <div className="mt-12 pt-8 border-t border-stone-100 flex items-center justify-between">
+                  <span className="font-medium text-xs uppercase tracking-widest text-stone-400">03</span>
+                  <button className="w-8 h-8 flex items-center justify-center text-stone-400 group-hover:text-primary transition-all">
+                    <span className="material-symbols-outlined text-xl">arrow_outward</span>
+                  </button>
+                </div>
               </div>
-            </div>
+            </PixelRevealCard>
           </div>
         </section>
 
@@ -238,24 +244,26 @@ const LandingPage = () => {
                   <button className="mt-auto w-full py-4 rounded-md border border-text-main text-text-main font-semibold hover:bg-text-main hover:text-white transition-colors">Get Started</button>
                 </div>
               </TiltedCard>
-              <div className="premium-frame bg-primary-dark text-white rounded-[1rem] flex flex-col relative transform md:-translate-y-4 z-10 transition-transform duration-300 hover:scale-[1.02]">
-                <div className="eb-content p-10 flex flex-col gap-8 h-full">
-                  <div className="absolute top-0 right-0 bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-bl-lg tracking-wider z-20">POPULAR</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white">Growth Loom</h3>
-                    <p className="text-4xl font-bold mt-4">$5,000<span className="text-lg font-normal text-stone-400">/mo</span></p>
+              <PixelRevealCard className="rounded-[1rem]" pixelSize={60}>
+                <div className="premium-frame bg-primary-dark text-white rounded-[1rem] flex flex-col relative transform md:-translate-y-4 z-10 transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="eb-content p-10 flex flex-col gap-8 h-full">
+                    <div className="absolute top-0 right-0 bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-bl-lg tracking-wider z-20">POPULAR</div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Growth Loom</h3>
+                      <p className="text-4xl font-bold mt-4">$5,000<span className="text-lg font-normal text-stone-400">/mo</span></p>
+                    </div>
+                    <p className="text-stone-300 text-sm leading-relaxed">Scale your operations with a dedicated full-stack team and strategic oversight.</p>
+                    <hr className="border-stone-700" />
+                    <ul className="flex flex-col gap-4 text-sm font-medium text-stone-300">
+                      <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Full Identity System</li>
+                      <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Web App Development</li>
+                      <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Priority Support</li>
+                      <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Monthly Strategy Calls</li>
+                    </ul>
+                    <button className="mt-auto w-full py-4 rounded-md bg-emerald-600/90 hover:bg-emerald-500 text-white font-semibold transition-colors shadow-lg shadow-black/20">Scale Up</button>
                   </div>
-                  <p className="text-stone-300 text-sm leading-relaxed">Scale your operations with a dedicated full-stack team and strategic oversight.</p>
-                  <hr className="border-stone-700" />
-                  <ul className="flex flex-col gap-4 text-sm font-medium text-stone-300">
-                    <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Full Identity System</li>
-                    <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Web App Development</li>
-                    <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Priority Support</li>
-                    <li className="flex gap-3 items-center"><span className="material-symbols-outlined text-emerald-400 text-base">check</span>Monthly Strategy Calls</li>
-                  </ul>
-                  <button className="mt-auto w-full py-4 rounded-md bg-emerald-600/90 hover:bg-emerald-500 text-white font-semibold transition-colors shadow-lg shadow-black/20">Scale Up</button>
                 </div>
-              </div>
+              </PixelRevealCard>
               <TiltedCard className="h-full">
                 <div className="bg-white rounded-[1rem] p-10 border border-stone-200 hover:border-primary/50 hover:shadow-xl hover:shadow-stone-200/50 h-full flex flex-col gap-8 relative overflow-hidden group">
                   <div>

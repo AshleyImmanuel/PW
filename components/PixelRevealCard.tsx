@@ -12,7 +12,7 @@ interface PixelRevealCardProps {
     pixelSize?: number; // Size of each pixel in px (approximate target)
 }
 
-const PixelRevealCard = ({ src, className = '', pixelSize = 40 }: PixelRevealCardProps) => {
+const PixelRevealCard = ({ src, children, className = '', pixelSize = 40 }: { src?: string, children?: React.ReactNode, className?: string, pixelSize?: number }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const pixelsRef = useRef<HTMLDivElement>(null);
 
@@ -26,6 +26,8 @@ const PixelRevealCard = ({ src, className = '', pixelSize = 40 }: PixelRevealCar
         pixelsContainer.innerHTML = '';
 
         const { width, height } = container.getBoundingClientRect();
+        if (width === 0 || height === 0) return; // Guard against 0 dimensions
+
         const cols = Math.ceil(width / pixelSize);
         const rows = Math.ceil(height / pixelSize);
         const totalPixels = cols * rows;
@@ -36,14 +38,11 @@ const PixelRevealCard = ({ src, className = '', pixelSize = 40 }: PixelRevealCar
 
         for (let i = 0; i < totalPixels; i++) {
             const pixel = document.createElement('div');
-            pixel.classList.add('absolute', 'bg-stone-200', 'z-10'); // Default cover color
+            pixel.classList.add('absolute', 'bg-stone-200', 'z-20'); // Increased z-index
             pixel.style.width = `${100 / cols}%`;
             pixel.style.height = `${100 / rows}%`;
             pixel.style.left = `${(i % cols) * (100 / cols)}%`;
             pixel.style.top = `${Math.floor(i / cols) * (100 / rows)}%`;
-
-            // Optional: Adding slight borders or gaps can enhance the "pixel" look
-            // pixel.style.border = '1px solid rgba(0,0,0,0.05)'; 
 
             fragment.appendChild(pixel);
             pixels.push(pixel);
@@ -56,48 +55,52 @@ const PixelRevealCard = ({ src, className = '', pixelSize = 40 }: PixelRevealCar
             { opacity: 1 },
             {
                 opacity: 0,
-                duration: 1.5,
+                duration: 1.0,
                 ease: "power2.inOut",
                 stagger: {
-                    amount: 1,
+                    amount: 0.5,
                     from: "random",
                     grid: [rows, cols]
                 },
                 scrollTrigger: {
                     trigger: container,
-                    start: "top 80%", // Start revealing when top of card hits 80% viewport height
-                    toggleActions: "play none none none" // Play once
+                    start: "top 85%",
+                    toggleActions: "play none none none"
                 }
             }
         );
 
-        // Reveal image underneath simultaneously slightly
-        const img = container.querySelector('img');
-        if (img) {
-            gsap.fromTo(img,
-                { scale: 1.1, filter: 'grayscale(100%)' },
+        // Animate content scale/filter if it's an image or generally
+        const content = container.querySelector('.reveal-content');
+        if (content) {
+            gsap.fromTo(content,
+                { filter: 'grayscale(100%)', scale: 0.98 },
                 {
-                    scale: 1,
                     filter: 'grayscale(0%)',
-                    duration: 2,
+                    scale: 1,
+                    duration: 1.2,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: container,
-                        start: "top 80%",
+                        start: "top 85%",
                     }
                 }
             );
         }
 
-    }, [src, pixelSize]);
+    }, [src, children, pixelSize]);
 
     return (
         <div ref={containerRef} className={`relative overflow-hidden ${className}`}>
-            {/* Target Image */}
-            <img src={src} alt="Reveal Content" className="w-full h-full object-cover relative z-0" />
+            {/* Content Layer */}
+            <div className="reveal-content w-full h-full relative z-0">
+                {children ? children : (
+                    src && <img src={src} alt="Reveal Content" className="w-full h-full object-cover" />
+                )}
+            </div>
 
             {/* Pixel Overlay Layer */}
-            <div ref={pixelsRef} className="absolute inset-0 z-10 w-full h-full pointer-events-none"></div>
+            <div ref={pixelsRef} className="absolute inset-0 z-20 w-full h-full pointer-events-none"></div>
         </div>
     );
 };
