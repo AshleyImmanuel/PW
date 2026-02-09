@@ -183,6 +183,51 @@ const LandingPage = () => {
           </div>
         </section>
 
+        {/* --- SELECTED WORKS --- */}
+        <section className="py-24 px-6 md:px-12 lg:px-20 bg-[#F5F5F0] relative z-20 border-b border-stone-200">
+          <div className="max-w-[1600px] mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-text-main tracking-tight mb-4">SELECTED WORKS</h2>
+                <div className="h-1 w-20 bg-primary"></div>
+              </div>
+              <button className="text-text-main font-medium border-b border-text-main pb-1 hover:text-primary hover:border-primary transition-colors">
+                View All Projects
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+              {/* Project 1 */}
+              <div className="flex flex-col gap-6 group cursor-pointer">
+                <PixelRevealCard className="aspect-[4/3] rounded-[1.5rem]" pixelSize={50}
+                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop">
+                </PixelRevealCard>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-2xl font-bold text-text-main group-hover:text-primary transition-colors">Neon Horizon</h3>
+                    <p className="text-text-muted mt-2">Immersive VR Experience</p>
+                  </div>
+                  <span className="text-xs font-bold border border-stone-300 px-3 py-1 rounded-full text-stone-500">2024</span>
+                </div>
+              </div>
+
+              {/* Project 2 */}
+              <div className="flex flex-col gap-6 group cursor-pointer md:mt-24">
+                <PixelRevealCard className="aspect-[4/3] rounded-[1.5rem]" pixelSize={50}
+                  src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop">
+                </PixelRevealCard>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-2xl font-bold text-text-main group-hover:text-primary transition-colors">Quantum Core</h3>
+                    <p className="text-text-muted mt-2">Fintech Dashboard Interface</p>
+                  </div>
+                  <span className="text-xs font-bold border border-stone-300 px-3 py-1 rounded-full text-stone-500">2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* --- VELOCITY SECTION --- */}
         <section className="grid grid-cols-1 lg:grid-cols-2 w-full bg-[#1C1C1C] text-[#F9F8F4] relative z-20">
           <div className="p-12 lg:p-20 flex flex-col justify-center gap-10 border-r border-stone-800">
@@ -218,6 +263,55 @@ const LandingPage = () => {
                 <p className="text-xs font-mono text-emerald-400 mb-3 uppercase tracking-wider">// METRIC</p>
                 <p className="text-5xl font-bold text-white">99.9%</p>
                 <p className="text-stone-400 text-sm mt-2">Uptime Guarantee on all deployments.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* --- THE ALGORITHM (PROCESS) --- */}
+        <section className="py-32 px-6 md:px-12 lg:px-20 bg-white relative z-20 border-t border-stone-200">
+          <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-4 sticky top-32 h-fit">
+              <h2 className="text-6xl font-bold text-text-main leading-none mb-8">
+                THE<br /><span className="text-primary italic">ALGORITHM.</span>
+              </h2>
+              <p className="text-text-muted text-lg leading-relaxed max-w-sm">
+                Our development process is a meticulous loop of discovery, architecture, and refinement.
+              </p>
+            </div>
+            <div className="lg:col-span-8 flex flex-col gap-24 relative pl-8 border-l border-stone-200">
+              {/* Step 1 */}
+              <div className="relative group">
+                <span className="absolute -left-[41px] top-0 h-5 w-5 rounded-full border-4 border-white bg-stone-300 group-hover:bg-primary transition-colors duration-500"></span>
+                <span className="text-6xl font-bold text-stone-100 absolute -top-10 -left-6 -z-10 group-hover:text-stone-200 transition-colors">01</span>
+                <h3 className="text-3xl font-bold text-text-main mb-4">Discovery & Blueprint</h3>
+                <p className="text-text-muted text-lg leading-relaxed max-w-2xl">
+                  We decode your vision. Through intensive workshops, we map out the DNA of your project, defining user personas, technical requirements, and aesthetic direction.
+                </p>
+                <div className="mt-8 grid grid-cols-2 gap-4 max-w-md">
+                  <div className="p-4 bg-surface rounded-lg text-sm font-medium text-stone-600">User Research</div>
+                  <div className="p-4 bg-surface rounded-lg text-sm font-medium text-stone-600">Tech Stack Selection</div>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative group">
+                <span className="absolute -left-[41px] top-0 h-5 w-5 rounded-full border-4 border-white bg-stone-300 group-hover:bg-primary transition-colors duration-500"></span>
+                <span className="text-6xl font-bold text-stone-100 absolute -top-10 -left-6 -z-10 group-hover:text-stone-200 transition-colors">02</span>
+                <h3 className="text-3xl font-bold text-text-main mb-4">Architectural Weave</h3>
+                <p className="text-text-muted text-lg leading-relaxed max-w-2xl">
+                  Code meets canvas. Our developers build the skeletal structure while designers craft the skin. We use component-driven development for modular, scalable systems.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative group">
+                <span className="absolute -left-[41px] top-0 h-5 w-5 rounded-full border-4 border-white bg-stone-300 group-hover:bg-primary transition-colors duration-500"></span>
+                <span className="text-6xl font-bold text-stone-100 absolute -top-10 -left-6 -z-10 group-hover:text-stone-200 transition-colors">03</span>
+                <h3 className="text-3xl font-bold text-text-main mb-4">Optimization & Launch</h3>
+                <p className="text-text-muted text-lg leading-relaxed max-w-2xl">
+                  Performance is paramount. we refine animations, optimize assets, and ensure pixel-perfect rendering across all devices before the final deploy.
+                </p>
               </div>
             </div>
           </div>
